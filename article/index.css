@@ -1,0 +1,82 @@
+/*
+  노말라이징
+*/
+html, body {
+  height: 100%;
+}
+body, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+/**/
+.slider-1 {
+  height: 100%;
+  position: relative; 
+}
+/*
+  좌/우 버튼 관련 css
+*/
+.slider-1 .side-btns > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  cursor:pointer;
+  z-index: 1;
+} 
+.slider-1 .side-btns > div:last-child {
+  left: auto;
+  right: 0; 
+}
+.slider-1 .side-btns > div > span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  left: inherit;
+  right: inherit;
+  transition: transform 0.2s;
+}
+.slider-1 .side-btns > div:active > span {
+  transform : translateY(-40%);
+}
+/*
+  슬라이드 관련 css
+*/
+.slider-1 .slides > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*
+    opacity : 0~1;
+    투명 : 0
+    불투명 : 1
+  */
+  opacity : 0;
+}
+.slider-1 .slides > div.active {
+  opacity:1;
+}
+/*
+  페이지 점
+*/
+.pages {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+.pages > div {
+  display: inline-block;
+  background-color: rgba(173, 173, 173, 0.5);
+  width: 20px;
+  height: 20px;
+  border-radius : 50%;
+}
+.pages > div.active {
+  background-color: rgba(173, 173, 173, 1);
+}
